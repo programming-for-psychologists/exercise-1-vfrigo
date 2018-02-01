@@ -1,0 +1,19 @@
+import time
+import sys
+from psychopy import visual,event,core
+ 
+win = visual.Window([400,400],color="black", units='pix')
+square_blue = visual.Rect(win,lineColor="black",fillColor="blue",size=[100,100])
+square_blue.draw()
+win.flip()
+while not event.getKeys(keyList=['s']):
+		if event.getKeys('left'):
+			square_blue.setSize([1.1,1],'*')
+			square_blue.draw()
+			win.flip()
+		if event.getKeys('right'):
+			square_blue.setSize([1.1,1],'/')
+			square_blue.draw()
+			win.flip()
+win.close()
+sys.exit()
